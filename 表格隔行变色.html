@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>表格隔行变色</title>
+    <style>
+        .bg {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <thead>表头</thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>22</td>
+                <td>33</td>
+                <td>44</td>
+                <td>55</td>
+            </tr>
+            <tr>
+                <td>111</td>
+                <td>222</td>
+                <td>333</td>
+                <td>444</td>
+                <td>555</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        // 获取所有元素
+        var trs = document.querySelector('tbody').querySelectorAll('tr');
+        // 利用循环绑定事件
+        for (var i = 0; i < trs.length; i++) {
+            trs[i].onmouseover = function () {
+                // console.log(11);
+                this.className = 'bg';
+            }
+        }
+        for (var i = 0; i < trs.length; i++) {
+            trs[i].onmouseout = function () {
+                // console.log(11);
+                this.className = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+
+<body>
+    <input type="text" value="手机">
+    <script>
+        var inp = document.querySelector('input');
+        inp.onclick = function () {
+            if (inp.value == '手机')
+                this.value = "";
+            this.style.color = '#333';//得到焦点颜色变深
+        }
+        inp.onblur = function () {
+            if (inp.value == '') {
+                this.value = "手机";
+            }
+            this.style.color = '#999';//失焦颜色变浅
+        }
+    </script>
+</body>
+
+</html>

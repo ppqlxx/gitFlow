@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <style>
+        .baidu img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="baidu">
+        <li><img src="img/1.jpg" alt=""></li>
+        <li><img src="img/2.png" alt=""></li>
+        <li><img src="img/3.png" alt=""></li>
+        <li><img src="img/7.jpg" alt=""></li>
+    </ul>
+    <script>
+        var imgs = document.querySelector('.baidu').querySelectorAll('img');
+        // console.log(imgs);
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function () {
+                document.body.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script>
+</body>
+
+</html>
