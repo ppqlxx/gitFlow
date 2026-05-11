@@ -1,0 +1,97 @@
+:root {
+  --bg: #f4f7fc;
+  --blurbc: #ababab;
+  --card: #ffffff;
+  --confirm: #4f46e5;
+  --primary: #4299e1;
+  --primary-light: #e0e7ff;
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --border: #e5e7eb;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, .05);
+  --shadow-hover: 0 12px 24px rgba(0, 0, 0, .1);
+  --transition: .25s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px auto;
+  padding: 20px;
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.case-card {
+  padding: 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.case-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.case-card h3 {
+  border-left: var(--primary) 4px solid;
+  padding-left: 20px;
+  line-height: 2;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.case-desc {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: var(--border) 1px solid;
+}
+
+.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.case-card:nth-child(1) table {
+  border: 1px solid var(--border);
+  border-collapse: collapse;
+  width: 600px;
+}
+
+.case-card:nth-child(1) th,
+td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: center;
+}
+
+
+.case-card:nth-child(1) th {
+  background-color: var(--primary);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+/* 复选框样式微调 */
+input[type="checkbox"] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+  /* 改变勾选框的颜色为你的主题色 */
+}

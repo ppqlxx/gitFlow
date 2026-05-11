@@ -1,0 +1,162 @@
+    /* 全局样式重置与基础设置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+    }
+
+    body {
+      padding: 30px;
+      line-height: 1.8;
+      background-color: #f8f9fa;
+    }
+
+    /* 案例标题样式，区分两个案例 */
+    .case-card>h3 {
+      margin: 25px 0 15px;
+      color: #2d3748;
+      border-left: 3px solid #4299e1;
+      padding-left: 10px;
+    }
+
+    .case-card {
+      font-family: 'Segoe UI' Arial, sans-serif;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #f5f7fa;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 标题样式 */
+    .case-desc {
+      color: #333;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    /* 时间显示容器 */
+    .clock {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      background-color: #fff;
+      border: 2px solid #4285f4;
+      border-radius: 8px;
+      color: #333;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ATM模块核心样式 */
+    .bank {
+      width: 100%;
+    }
+
+
+    /* 金额区域布局（核心优化） */
+    #money {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      /* 元素间距，比margin更灵活 */
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      /* 小屏幕自动换行，避免拥挤 */
+    }
+
+
+    /* 给“请输入金额”标签也固定宽度，优化排列 */
+    #money label {
+      color: #2d3748;
+    }
+
+    /* 余额展示区样式（核心修改） */
+    #all {
+      /* 关键：替换inline-block为inline-flex，强制尺寸渲染 */
+      display: inline-flex;
+      align-items: center;
+      /* 垂直居中内容 */
+      justify-content: center;
+      /* 水平居中内容 */
+      width: 120px;
+      /* 固定高度，彻底杜绝高度波动 */
+      height: 38px;
+      padding: 0 12px;
+      /* 取消上下padding，高度由height控制更精准 */
+      background-color: #e8f4f8;
+      border: 1px solid #bee3f8;
+      border-radius: 6px;
+      color: #2d3748;
+      font-weight: 600;
+      font-size: 16px;
+      box-sizing: border-box !important;
+    }
+
+    /* 输入框调整，避免过宽 */
+    #money input {
+      flex: 1;
+      min-width: 120px;
+      padding: 8px 12px;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    #money input:focus {
+      border-color: #4299e1;
+      /* 聚焦时蓝色边框，提示当前操作区 */
+      box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.1);
+    }
+
+    /* 按钮布局与样式 */
+    .bank button {
+      padding: 10px 20px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      /* 换行时留间距 */
+      border: none;
+      border-radius: 6px;
+      background-color: #4299e1;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .bank button:hover {
+      background-color: #3182ce;
+      /*  hover时加深颜色，提升交互感 */
+    }
+
+    /* 退出按钮单独配色，区分危险操作 */
+    .bank button:last-child {
+      background-color: #e53e3e;
+    }
+
+    .bank button:last-child:hover {
+      background-color: #c53030;
+    }
+
+    /* 响应式调整 */
+    @media(max-width:480px) {
+      .clock {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 1.5rem;
+      }
+
+      div:nth-child(1) {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+    }

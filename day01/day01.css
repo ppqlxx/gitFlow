@@ -1,0 +1,33 @@
+table {
+  height: 100px;
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* 这里注意字体设置必须给出字号大小加单位以及字体 并且用空格隔开 */
+#ex4 {
+  /* 可保留，用于设置案例4整体的字体样式 */
+  font: 16px SimHei;
+}
+
+/* 可以直接设置thead的样式 但是其子元素具有默认样式会覆盖给thead直接设置的样式 */
+#tableTitle {
+  font: italic bold 24px SimHei;
+  /* 可单独调整大小，避免40px过大 */
+  color: #333;
+  /* 可选：加颜色增强效果 */
+  padding: 10px 0;
+  /* 增加内边距，让标题更舒展 */
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th {
+  padding: 5px 30px;
+}

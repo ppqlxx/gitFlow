@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+h3 {
+  border-left: 4px solid #4299e1;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  color: #2d3748;
+}
+
+.case-card {
+  margin: 40px;
+  padding: 30px;
+  background-color: #f5f7fa;
+  max-width: 800px;
+}
+
+.case-card:hover {
+  /* 两层阴影叠加 第一层大 更淡 第二层 小 更深 */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+  transform: translate(-5px);
+}
+
+.case-desc {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+}
+
+.show {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.slider {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+}
+
+.slider-wrapper {
+  margin: 0 auto;
+  display: flex;
+  /* 弹性一行 */
+  align-items: center;
+  /* 垂直居中 */
+  justify-content: center;
+  height: 400px;
+  /* 防止图片溢出 */
+  overflow: hidden;
+}
+
+img {
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+  /* 短边裁切，铺满不留空 */
+  display: block;
+}
+
+.slider-footer {
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.slider-indictor {
+  margin: 0 auto;
+  max-width: 300px;
+  display: flex;
+  gap: 6px;
+  padding: 0;
+}
+
+button {
+  position: relative;
+  width: 44px;
+  /* 正方形 */
+  height: 44px;
+  background-color: rgba(0, 0, 0, 20%);
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 44px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+}
+
+
+/* 悬停高亮 */
+.prev:hover,
+.next:hover {
+  background: rgba(0, 0, 0, .55);
+}
+
+li {
+  flex: 1;
+  list-style: none;
+  /* 去掉默认黑圆 */
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  /* 正圆 */
+  background: rgba(0, 0, 0, .4);
+  /* 半透明白 */
+  transition: all .3s;
+  cursor: pointer;
+}
+
+/* 当前激活项 */
+.slider-indictor li.active {
+  background: #980202;
+  /* 实色高亮 */
+  transform: scale(1.2);
+  /* 轻微放大 */
+}

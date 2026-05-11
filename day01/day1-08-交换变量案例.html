@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="day0108.js"> </script>
+  <link rel="stylesheet" href="day01.css">
+  <title>day1-08-交换变量案例</title>
+</head>
+
+<body>
+  <div class="1">
+    案例1
+    <button onclick="tip()">点击</button>
+    <label text={{name}}></label>
+  </div>
+  <div class="2">
+    案例2：
+    需求：有两个变量：num1中存放的是10，num2中放的是20，将两值进行交换
+
+    <div>
+      <!-- {{}}这种写法是vue的语法 给搞混了 -->
+      <!-- 这里传参应该是以字符串的形式传值，object是id字符串而不是变量 -->
+      <input type="text" id="object1" value="1">
+      <input type="text" id="object2" value="2">
+      <button onclick="swap(document.getElementById('object1'),document.getElementById('object2'))">点击换值</button>
+    </div>
+  </div>
+
+  <div class="3">
+    案例3：
+    需求：有两个变量：num1中存放的是10，num2中放的是20，将两值进行交换
+
+    <div>
+      <!-- {{}}这种写法是vue的语法 给搞混了 -->
+      <!-- 这里传参应该是以字符串的形式传值，object是id字符串而不是变量 -->
+      <input type="text" id="object1" value="1">
+      <input type="text" id="object2" value="2">
+      <button onclick="swap(document.getElementById('object1'),document.getElementById('object2'))">点击换值</button>
+    </div>
+  </div>
+
+  <div id="ex4">
+    案例4：
+    需求：用户输入商品价格和商品数量以及收货地址，可以自动打印订单信息
+
+    <div>
+      <table border="2px black">
+        <thead>
+          <tr>
+            <!-- colspan="5" 合并5列，与下方5个th对应 -->
+            <th colspan="5" id="tableTitle">订单付款确认页面</th>
+          </tr>12
+        </thead>
+        <tbody>
+          <tr>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>商品数量</th>
+            <th>总价</th>
+            <th>收获地址</th>
+          </tr>
+          <tr>
+            <td id="Shopname"></td>
+            <td id="Price"></td>
+            <td id="Num"></td>
+            <td id="Sum"></td>
+            <td id="Address"></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <!-- 行内形式 -->
+      <script>
+        let price = +prompt('请输入商品价格');
+        let num = +prompt('请输入商品数量');
+        let Sname = prompt('请输入商品名称');
+        document.write(`
+         <table border="2px black">
+        <tbody>
+          <tr>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>商品数量</th>
+          </tr>
+          <tr>
+            <td id="${Sname}">${Sname}</td>
+            <td id="${num}">${num}</td>
+            <td id="${price}">${price}</td>
+          </tr>
+
+        </tbody>
+      </table>
+        `);
+      </script>
+    </div>
+  </div>
+</body>
+
+</html>

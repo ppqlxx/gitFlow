@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="day10.js"></script>
+  <link rel="stylesheet" href="day10.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="case-card">
+    <h3>案例1：5秒后跳转页面案例day5-128</h3>
+    <div class="case-desc">
+      需求：用户点击后可以跳转，如果不点击，则5秒之后自动跳转，要求里面包含秒数倒计时
+      支付成功，5秒之后跳转回原网页
+    </div>
+    <div class="show">
+
+    </div>
+  </div>
+
+  <div class="case-card">
+    <h3>案例2：读取本地存储案例day5-132</h3>
+    <div class="case-desc">
+
+    </div>
+    <div class="show">
+
+    </div>
+  </div>
+  <div class="case-card">
+    <h3>案例3：map+join渲染案例day5-132</h3>
+    <div class="case-desc">
+      需求：根据持久化数据染页面
+      核心步骤：
+      ②：根据数据染页面。遍历数组，根据数据生成tr，里面填充数据，最后追加给tbody
+      1.渣染业务要封装成一个函数render
+      2.我们使用map方法遍历数组，里面更换数据，然后会返回有数据的tr数组
+      3.通过join方法把map返回的数组转换为字符串
+      4.把字符串通过innerHTML赋值给tbody
+    </div>
+    <div class="show">
+
+    </div>
+  </div>
+  <div class="case-card">
+    <h3>案例4：新增案例day5-132</h3>
+    <div class="case-desc">
+      需求：点击新增按钮，页面显示新的数据
+      核心步骤：
+      ①：给form注册提交事件，要阻止默认提交事件（阻止默认行为）
+      事件对象·preventDefault（）//阻止默认行为
+      ②：非空判断
+      如果年龄、性别、薪资有一个值为空，则return返回'输入不能为空'中断程序
+    </div>
+    <div class="show">
+
+    </div>
+  </div>
+  <div class="case-card">
+    <h3>案例5：删除案例day5-132</h3>
+    <div class="case-desc">
+      需求：点击删除按钮，可以删除对应的数据
+      核心步骤：
+      ①：采用事件委托形式，给tbody注册点击事件
+      ②：得到当前点击的索引号。染数据的时候，动态给a链接添加自定义属性data-id="o"
+    </div>
+    <div class="show">
+
+    </div>
+  </div>
+</body>
+
+</html>

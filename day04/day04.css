@@ -1,0 +1,174 @@
+    /* 全局样式重置与基础设置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* 统一字体设置 */
+      font-family: "Arial", sans-serif;
+    }
+
+    body {
+      padding: 30px;
+      line-height: 1.8;
+      background-color: #f8f9fa;
+    }
+
+    /* 案例标题样式，区分两个案例 */
+    .case-card>h3 {
+      margin: 30px 0 15px;
+      color: #2d3748;
+      border-left: 3px solid #4299e1;
+      padding-left: 10px;
+    }
+
+    .case-card {
+      font-family: 'Segoe UI' Arial, sans-serif;
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #f5f7fa;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+      /* 卡片悬浮动效 */
+      transition: all 0.3s ease;
+    }
+
+    /* 卡片悬浮时的动效 */
+    .case-card:hover {
+      /* 轻微上移 */
+      transform: translateY(-5px);
+      /* 阴影加深，突出层次感 */
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    /* 标题样式 */
+    .case-desc {
+      color: #333;
+      font-size: 1.2rem;
+      margin-bottom: 1.8rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #e0e0e0;
+
+    }
+
+    /* 展示99乘法表的面板 */
+    .show {
+      background-color: #fff;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #e0e0e0;
+      min-height: 20rem;
+      display: flex;
+      justify-content: center;
+      /* 垂直居中 */
+      flex-direction: column;
+      /* 改变主轴方向为垂直*/
+      align-items: center;
+      /* 水平居中 */
+
+      /* 面板边框 + 轻微阴影 */
+      border: 1px solid #e0e7ff;
+      box-shadow: 0 2px 8px rgba(66, 153, 225, 0.05);
+      /* 过渡效果，配合子元素交互 */
+      transition: all 0.2s ease;
+    }
+
+
+    .in {
+      margin-bottom: 2rem;
+      padding: 0rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* 输入区域间距 */
+      gap: 12px;
+    }
+
+    /* 输入框样式优化 */
+    #inputSeconds {
+      width: 280px;
+      height: 50px;
+      padding: 0 15px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #2d3748;
+      /* 输入框聚焦动效 */
+      transition: all 0.3s ease;
+      /* 去掉默认外边框 */
+      outline: none;
+    }
+
+    /* 输入框聚焦样式 */
+    #inputSeconds:focus {
+      border-color: #4299e1;
+      /* 聚焦时发光效果 */
+      box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.1);
+      /* 轻微放大 */
+      transform: scale(1.02);
+    }
+
+    /* 按钮样式优化 - 核心动效 */
+    button {
+      height: 50px;
+      padding: 0 25px;
+      /* 按钮渐变背景 */
+      background: linear-gradient(90deg, #4299e1, #38b2ac);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      /* 鼠标移上去变手型 */
+      cursor: pointer;
+      /* 按钮过渡效果 */
+      transition: all 0.3s ease;
+      /* 禁止文字选中 */
+      user-select: none;
+    }
+
+    /* 按钮悬浮样式 */
+    button:hover {
+      /* 渐变偏移，更灵动 */
+      background: linear-gradient(90deg, #3182ce, #319795);
+      /* 轻微放大 */
+      transform: scale(1.05);
+      /* 阴影加深 */
+      box-shadow: 0 4px 12px rgba(66, 153, 225, 0.2);
+    }
+
+    /* 按钮点击时的按压效果 */
+    button:active {
+      transform: scale(0.98);
+      box-shadow: 0 2px 6px rgba(66, 153, 225, 0.15);
+    }
+
+    /* 结果展示区域样式 */
+    #result {
+      margin-top: 1rem;
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      color: #2d3748;
+      /* 结果区域背景 */
+      background-color: #f0f8fb;
+      border-radius: 8px;
+      /* 结果区域边框 */
+      border: 1px solid #bee3f8;
+      /* 最小宽度，避免内容太窄 */
+      min-width: 280px;
+      text-align: center;
+      /* 结果出现时的过渡 */
+      transition: all 0.3s ease;
+      /* 初始透明度为0，配合JS交互 */
+      opacity: 0;
+      /* 初始位移，配合动效 */
+      transform: translateY(10px);
+    }
+
+    /* 结果展示时的样式（可配合JS添加类名） */
+    #result.show-result {
+      opacity: 1;
+      transform: translateY(0);
+    }

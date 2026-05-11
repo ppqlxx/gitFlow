@@ -1,0 +1,84 @@
+           /* 全局样式重置与基础设置 */
+           * {
+             margin: 0;
+             padding: 0;
+             box-sizing: border-box;
+             font-family: "Arial", sans-serif;
+           }
+
+           body {
+             padding: 30px;
+             line-height: 1.8;
+             background-color: #f8f9fa;
+           }
+
+           /* 案例标题样式，区分两个案例 */
+           .case-card>h3 {
+             margin: 25px 0 15px;
+             color: #2d3748;
+             border-left: 3px solid #4299e1;
+             padding-left: 10px;
+           }
+
+           .case-card {
+             font-family: 'Segoe UI' Arial, sans-serif;
+             max-width: 1000px;
+             margin: 2rem auto;
+             padding: 2rem;
+             background-color: #f5f7fa;
+             border-radius: 12px;
+             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+           }
+
+           /* 标题样式 */
+           .case-desc {
+             color: #333;
+             font-size: 1.2rem;
+             margin-bottom: 1.5rem;
+             padding-bottom: 0.8rem;
+             border-bottom: 1px solid #e0e0e0;
+           }
+
+           /* 展示99乘法表的面板 */
+           .show {
+             background-color: #fff;
+             font-size: 1.1rem;
+             margin-bottom: 1.5rem;
+             padding-bottom: 0.8rem;
+             border-bottom: 1px solid #e0e0e0;
+             min-height: 20rem;
+             display: flex;
+             justify-content: center;
+             /* 垂直居中 */
+             flex-direction: column;
+             /* 改变主轴方向为垂直*/
+             align-items: center;
+             /* 水平居中 */
+           }
+
+           .look {
+             margin: 1.5rem auto;
+
+           }
+
+           .look p {
+             display: inline;
+             padding: 1.0rem 1.5rem;
+             border: 2px solid #2d3748;
+             font-size: 1.2rem;
+             margin: 0.5rem
+           }
+
+           .play {
+             justify-content: center;
+
+           }
+
+           .play button {
+             background-color: #4278b6;
+             padding: 0.5rem 1.2rem;
+             border-radius: 5%;
+             font-size: 1.2rem;
+             font-family: "Arial", sans-serif;
+             color: white
+           }

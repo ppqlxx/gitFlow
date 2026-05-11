@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="day08.js"></script>
+  <link rel="stylesheet" href="day08.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="case-card">
+    <h3>案例1：表单全选反选案例day3-104</h3>
+    <div class="case-desc">
+      业务分析：
+      1、点击开始按钮随机抽取数组的一个数据，放到页面中
+      2、点击结束按钮删除数组当前抽取的一个数据
+      3、当抽取到最后一个数据的时候，两个按钮同时禁用(写点开始里面，只剩最后一个数据不用抽了)
+      核心：利用定时器快速展示，停止定时器结束展示
+
+    </div>
+    <div class="show">
+      <table>
+        <thead>
+          <tr>
+            <th scope="row"><input type="checkbox" id="all" name="buyConfirm" value="all" />全选</th>
+            <th scope="col">商品</th>
+            <th scope="col">商家</th>
+            <th scope="col">价格</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row"><input type="checkbox" id="phone" name="buyConfirm" value="phone" /></td>
+            <td>小米手机</td>
+            <td>小米</td>
+            <td>￥1999</td>
+          </tr>
+          <tr>
+            <td scope="row"><input type="checkbox" id="water" name="buyConfirm" value="water" /></td>
+            <td>小米净水器</td>
+            <td>小米</td>
+            <td>￥4999</td>
+          </tr>
+          <tr>
+            <td scope="row"><input type="checkbox" id="tv" name="buyConfirm" value="tv" /></td>
+            <td>小米电视</td>
+            <td>小米</td>
+            <td>￥5999</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+  <div class="case-card">
+    <h3>案例2：tab栏切换改造案例day3-108</h3>
+    <div class="case-desc">
+      需求：优化程序，将tab切换案例改为事件委托写法
+    </div>
+    <div class="show">
+      已完成见Tab
+    </div>
+  </div>
+
+
+  <div class="case-card">
+    <h3>案例3：页面滚动显示隐藏侧边栏案例day3-111</h3>
+    <div class="case-desc">
+      需求：当页面滚动大于300像素的距离的时候，就显示侧边栏，否则隐藏侧边栏
+      （仿京东页面）
+    </div>
+    <div class="show">
+
+    </div>
+  </div>
+
+
+  <div class="case-card">
+    <h3>案例4：评论回车发布案例day3-113</h3>
+    <div class="case-desc">
+      需求：当页面滚动到秒杀模块，导航栏自动滑入，否则滑出;
+      即检测是否滚动到某个位置，是的话导航栏自动滑，否则滑出；
+      给出的教程做法：获得document.documentElement.SrcollTop与元素.OffsetTop的差值，获得将对的位置
+      对差值位置进行比较和分析
+      header的显示就用top来控制
+    </div>
+    <div class="show">
+
+    </div>
+  </div>
+
+
+  <div class="case-card">
+    <h3>案例5：电梯导航案例day3-114</h3>
+    <div class="case-desc">
+      需求：点击不同的模块，页面可以自动跳转不同的位置
+      模块分析：
+      ①：页面滚动到对应位置，导航显示，否则隐藏模块
+      ②：点击导航对应小模块，页面会跳到对应大模块位置
+      ③：页面滚动到对应位置，电梯导航对应模块自动发生变化
+    </div>
+    <div class="show">
+      综合前面三个案例，结果见电梯导航栏案例
+    </div>
+  </div>
+
+</body>
+
+</html>

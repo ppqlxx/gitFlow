@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.case-card {
+  margin: 40px;
+  padding: 30px;
+  background-color: #f5f7fa;
+}
+
+.case-card h3 {
+  margin-bottom: 20px;
+  color: #2d3748;
+  border-left: 4px solid #4299e1;
+  padding-left: 10px;
+}
+
+.case-desc {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.case-card:hover {
+  /*  x y z 偏移量 模糊半径 颜色 */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+  /* 轻微上移 */
+  transform: translate(-5px)
+}
+
+.show {
+  background-color: #fff;
+  margin: 30px 0 10px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 添加容器样式 */
+#name-container {
+  width: 200px;
+  height: 60px;
+  /* 固定高度，显示一个名字 */
+  overflow: hidden;
+  /* 隐藏超出部分 */
+  position: relative;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+/* 修改 #nameselect 样式 */
+#nameselect {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  transform: translateY(0);
+}
+
+/* 名字项的样式 */
+.name-item {
+  height: 60px;
+  top: 0px;
+  /* 与容器高度一致 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #2d3748;
+}
+
+/* 简化滚动动画，移除 transform */
+@keyframes roll {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-480px);
+    /* 8个名字 × 60px = 480px */
+  }
+}
+
+/* 简化滚动类，仅使用CSS动画 */
+.rolling {
+  animation: roll 1.5s linear infinite;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-text {
+  padding: 10px 20px;
+  border: 1px solid #e0e0e0;
+}
+
+form {
+  display: grid;
+  /* 2. 定义列结构：第一个fieldset占45%，第二个占55% */
+  grid-template-columns: 45% 55%;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+legend {
+  color: #333;
+  padding: 3px 6px;
+  font-size: 1.2rem;
+}
+
+
+fieldset#radio {
+  border: 1px solid #333;
+}
+
+#color {
+  border: 1px solid #333;
+  width: 80px;
+  height: 80px;
+}
+
+#res {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+form input {
+  margin-bottom: 15px;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* 停止按钮样式 */
+.btn.stop {
+  background-color: #e53e3e;
+}
+
+.btn.stop:hover {
+  background-color: #c53030;
+}

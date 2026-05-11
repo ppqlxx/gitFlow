@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="day05.js"></script>
+  <link rel="stylesheet" href="day05.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="case-card">
+    <h3>案例1：随机点名day5-72</h3>
+    <div class="case-desc">
+      需求：请把[赵云'，“黄忠'，‘关羽”，“张飞'，马超'，“刘备”，“曹操”]随机显示一个名字到页面中
+
+    </div>
+    <div class="show">
+      <div id="name-container">
+        <div id="nameselect"></div>
+      </div>
+      <button class="btn" onclick="startRollingJS()">开始</button>
+      <button class="btn" onclick="stopRollingJS()">停止</button>
+    </div>
+  </div>
+
+  <div class="case-card">
+    <h3>案例2：猜数字游戏day5-73</h3>
+    <div class="case-desc">
+      需求：程序随机生成1-10之间的一个数字，用户输入一个数字
+      1）如果大于该数字，就提示，数字猜大了，继续猜
+      2）如果小于该数字，就提示，数字猜小了，继续猜
+      3）如果猜对了，就提示猜对了，程序结束
+    </div>
+    <div class="show">
+      <input type="text" class="input-text" placeholder="请输入一个猜测的数字">
+      <button class="btn" onclick="right()">验证</button>
+    </div>
+  </div>
+
+  <div class="case-card">
+    <h3>案例3：生成随机颜色day5-74</h3>
+    <div class="case-desc">
+      需求：该函数接收一个布尔类型参数，表示颜色的格式是十六进制还是rgb格式。
+      1）如果参数传递的是true或者无参数，则输出一个随机十六进制的颜色
+      2）如果参数传递的是false，则输出一个随机rgb的颜色
+      3）格式：
+      function getRandomColor(flag){
+      console.log(getRandomColor(true)) / /#ffffff
+      console.log(getRandomColor(false)) //rgb(255,255,255)
+      }
+      分析：
+      提示：16进制颜色格式为：‘#fffff’f其中f可以是任意0-f之间的字符
+      提示：rgb颜色格式为：‘rgb(255,255,255)）’其中255可以是任意0-255之间的数字
+    </div>
+    <div class="show">
+
+      <form>
+        <fieldset id="radio">
+          <legend>请勾选颜色的表示方式</legend>
+          <div class="form-grop">
+            <input type="radio" class="check" name="color" value="sixteen" id="color1" checked>
+            <label for="color1">十六进制</label>
+          </div>
+          <div class="form-grop">
+            <input type="radio" class="check" name="color" value="rgb" id="color2">
+            <label for="color2">RGB</label>
+          </div>
+        </fieldset>
+        <fieldset id="res">
+          <div id="color"></div>
+          <div id="colortext">颜色：</div>
+        </fieldset>
+        <fieldset id="confirm"><button class="btn" type="button" onclick=getcolor()>生成</button></fieldset>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

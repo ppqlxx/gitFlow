@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="comment.js"></script>
+  <link rel="stylesheet" href="comment.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="keyword">
+    评论回车发布：</br>
+    需求：按下回车键盘，可以发布信息</br>
+    分析：</br>
+    ①：用到按下键盘事件keydown或者keyup都可以</br>
+    ②：如果用户按下的是回车键盘，则发布信息</br>
+    ③：让留言信息模块显示，把拿到的数据染到对应标签内部</br>
+  </div>
+
+  <div class="editor">
+
+    <textarea name="" id="txt" placeholder="发一条友善的评论" maxlength="200"></textarea>
+    <div class="toolbar"><span class="conuter">0/200</span>
+      <button id="submit">发布</button>
+    </div>
+
+  </div>
+
+  <div class="read">
+    <div class="username"></div>
+    <div class="comment"></div>
+  </div>
+  <ul id="list" class="list"></ul>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="day10.js"></script>
+  <link rel="stylesheet" href="day10.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="case-card">
+    <h3>案例1：用户名验证案例day6-140</h3>
+    <div class="case-desc">
+      需求：用户名要求用户英文字母，数字，下划线或者短横线组成，并且用户名长度为6~16位
+      分析：
+      ①：首先准备好这种正则表达式模式/^[a-ZA-Z0-9-_]{6,16}$/
+      ②：当表单失去焦点就开始验证。
+      ③：如果符合正则规范，则让后面的span标签添加right类。
+      ④：如果不符合正则规范，则让后面的span标签添加wrong类
+    </div>
+    <div class="show">
+
+    </div>
+  </div>
+
+  <div class="case-card">
+    <h3>案例2：过滤敏感词案例day6-141</h3>
+    <div class="case-desc">
+      需求：要求用户不能输入敏感字
+      比如，pink老师上课很有**
+      分析：
+      ①：用户输入内容
+      ②：内容进行正则替换查找，找到敏感词，进行**
+      ③：要全局替换使用修饰符g
+    </div>
+    <div class="show">
+
+    </div>
+  </div>
+
+  <div class="case-card">
+    <h3>案例3：综合案例-注册页面day6-142-145</h3>
+    <div class="case-desc">
+
+    </div>
+    <div class="show">
+
+    </div>
+  </div>
+  <div class="case-card">
+    <h3>案例4：综合案例-登录页面day6-146-147</h3>
+    <div class="case-desc">
+
+    </div>
+    <div class="show">
+
+    </div>
+  </div>
+
+  <div class="case-card">
+    <h3>案例5：放大镜day6-148-150</h3>
+    <div class="case-desc">
+
+    </div>
+    <div class="show">
+
+    </div>
+  </div>
+</body>
+
+</html>

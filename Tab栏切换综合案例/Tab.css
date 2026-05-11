@@ -1,0 +1,177 @@
+/* 引入谷歌字体 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+/* CSS 自定义属性 */
+/* :root 等价于 <html>，把变量声明在全局作用域，整个页面都能用
+变量以 -- 开头，取值用 var(变量名, 默认值) */
+:root {
+  --bg: #f4f7fc;
+  --card: #ffffff;
+  --primary: #4299e1;
+  --primary-light: #e0e7ff;
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --border: #e5e7eb;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  padding: 20px;
+  /* 给出宽度的时候才会显示居中 */
+  margin: 20px auto;
+  width: 1200px;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+}
+
+.header {
+  padding: 20px;
+  display: flex;
+  background-color: #fff;
+  border-bottom: 1px solid var(--border);
+}
+
+.header .left {
+  flex: 1;
+  padding-left: 40px;
+}
+
+.header .right {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.right span {
+  flex: 1;
+  text-align: center;
+}
+
+.card {
+  padding-top: 20px;
+  display: flex;
+  background-color: var(--card);
+  /* align-items: stretch; */
+  /* 确保左右两个 flex 子项高度始终相等 */
+}
+
+.card .left {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card .left img {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.card .description {
+  color: var(--text);
+  font-size: 1.2rem;
+}
+
+.card .price {
+  color: brown;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.card .num {
+  color: var(--text-light);
+  font-size: 1.0rem;
+}
+
+.card .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* 让内容和页脚上下排列 */
+}
+
+.card .right img {
+  width: 100%;
+  /* 关键：占据第1列，且跨越两行 */
+  grid-row: 1 / 4;
+  grid-column: 1 / 2;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.card .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 14;
+}
+
+.smallcard {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  /* 增加一点间距更简约美观 */
+  align-items: top;
+  padding: 10px;
+}
+
+.smallcard .num {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+}
+
+.slider-footer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中（在 20% 高度内居中） */
+}
+
+.smallcard span {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+  background-color: rgba(0, 0, 0, .4);
+  color: #fff;
+  z-index: 2;
+  align-self: end;
+}
+
+ul {
+  display: flex;
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-footer li {
+  list-style: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .4);
+
+}
+
+.slider-footer li.active {
+  background-color: rgba(171, 0, 0, 0.4);
+}
+
+.header span.active {
+  color: brown;
+  border-bottom: 2px solid brown;
+
+}

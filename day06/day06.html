@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="day06.js"></script>
+  <link rel="stylesheet" href="day06.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="case-card">
+    <h3>案例1：轮播图定时版APIS-day1-92</h3>
+    <div class="case-desc">
+      需求：当我们刷新页面，页面中的轮播图会显示不同图片以及样式
+      分析：
+      ①：准备一个数组对象，里面包含详细信息（素材包含）
+      ②：随机选择一个数字，选出数组对应的对象，更换图片，底部盒子背景颜色，以及文字内容
+      ③：利用这个随机数字，让小圆点添加高亮的类(addClass)利用css结构伪类选择器
+    </div>
+    <div class="show">
+      <div class="slider">
+        <div class="slider-wrapper">
+          <button class="prev">&lt;</button>
+          <img></img>
+          <button class="next">&gt;</button>
+        </div>
+        <div class="slider-footer">
+
+          <ul class="slider-indictor">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="case-card">
+    <h3>案例2：轮播图定时版APIS-day1-92</h3>
+    <div class="case-desc">
+      需求：每隔一秒钟切换一个图片
+      分析：
+      观看百场直播
+      ①：准备一个数组对象，里面包含详细信息（素材包含）
+      ②：获取元素
+      ③：设置定时器函数
+      一站式解决你的电脑配置问题！！！
+      设置一个变量++
+      找到变量对应的对象
+      更改图片、文字信息
+      激活小圆点：移除上一个高亮的类名，当前变量对应的小圆点添加类
+      ④：处理图片自动复原从头播放(放到变量++后面，紧挨)
+      如果图片播放到最后一张，就是大于等于数组的长度
+      则把变量重置为0
+    </div>
+    <div class="show">
+      <div class="slider">
+        <div class="slider-wrapper">
+          <button class="prev">&lt;</button>
+          <img></img>
+          <button class="next">&gt;</button>
+        </div>
+        <div class="slider-footer">
+
+          <ul class="slider-indictor">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

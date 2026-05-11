@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="day07.js"></script>
+  <link rel="stylesheet" href="day07.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="case-card">
+    <h3>案例1：随机点名案例day2-94</h3>
+    <div class="case-desc">
+      业务分析：
+      1、点击开始按钮随机抽取数组的一个数据，放到页面中
+      2、点击结束按钮删除数组当前抽取的一个数据
+      3、当抽取到最后一个数据的时候，两个按钮同时禁用(写点开始里面，只剩最后一个数据不用抽了)
+      核心：利用定时器快速展示，停止定时器结束展示
+
+      易错点：
+      1、pop是只删除数组的最后一个值 shift删除第一个值
+      2、splice：删除或者添加 splice(start, deleteCount, item1, item2, /* …, */ itemN)
+      3、indexOf和findIndex
+      JavaScript 中，findIndex 要求传入一个回调函数作为参数
+      如果你只是找一个简单的字符串在数组里的位置，用 indexOf(value) 最简约。
+      如果你是找满足某个复杂条件的成员（比如对象里的某个属性），才用 findIndex(item => ...)。
+
+
+    </div>
+    <div class="show">
+      <div class="name"></div>
+      <button id="startBtn" onclick="start()">开始</button>
+      <button id="endBtn" onclick="end()">结束</button>
+    </div>
+  </div>
+
+
+  <div class="case-card">
+    <h3>案例2：轮播图完整版案例day2-96~97</h3>
+    <div class="case-desc">
+      业务分析：
+      核心：利用定时器快速展示，停止定时器结束展示
+      这个案例在day06.html中已经实现
+      增加功能 鼠标经过暂停定时器；鼠标离开开启定时器
+
+      学而知新：CSS居中汇总<br>
+      text-align: center → 只对块级容器里的行内/行内块内容居中，flex 子项不吃这一套<br>
+      align-items: center → 控制交叉轴对齐（上下居中），不会左右移动<br>
+      margin: 0 auto → 用在自己身上，只能让块盒子本身在父层居中，不会管里面的子项怎么摆<br>
+      居中口诀：<br>
+      | 场景 | 口诀 | 给谁写 |<br>
+      | ----------------------- | ------------------------ | ----------- |<br>
+      | 文字、链接、图片等**行内/行内块**左右居中 | `text-align:center` | **父元素** |<br>
+      | **定宽块级盒子**本身左右居中 | `margin:0 auto` | **自己** |<br>
+      | **flex 子项**在**主轴**居中 | `justify-content:center` | **flex 容器** |<br>
+      | **flex 子项**在**交叉轴**居中 | `align-items:center` | **flex 容器** |<br>
+
+    </div>
+    <div class="show">
+      <div class="slider">
+        <div class="slider-header">
+          <button id="preBtn">&lt;</button>
+          <div class="img-box"><img src="" alt=""></div>
+          <button id="nextBtn">&gt;</button>
+        </div>
+        <div class="slider-footer">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="case-card">
+    <h3>案例3：评论字数统计案例day2-99</h3>
+    <div class="case-desc">
+      需求：用户输入文字，可以计算用户输入的字数<br>
+      学而知新：<br>
+      1、取消form中表单的自动提交功能<br>
+      通过将button的type属性设置为button;<br>
+      或者通过click事件中 e.preventDefault(); // 阻止表单提交<br>
+      2、textarea大小
+      通过在标签中rol和row控制大小是HTML的原生属性， 而CSS中设置height是外部样式
+      虽然权重一致，但是属性里的尺寸更早生效
+    </div>
+    <div class="show">
+      <form>
+        <div class="input-box">
+          <textarea id="txt" placeholder="发一条友善的评论" maxlength="200"></textarea>
+          <span class="num">0/200</span>
+        </div>
+        <button id="submit" type="button">发布</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="case-card">
+    <h3>案例4：评论回车发布案例day2-101</h3>
+    <div class="case-desc">
+      需求：按下回车键盘，可以发布信息
+      分析：
+      ①：用到按下键盘事件keydown或者keyup都可以
+      ②：如果用户按下的是回车键盘，则发布信息
+      ③：让留言信息模块显示，把拿到的数据渲染到对应标签内部
+      <br>案例三和四一并放到comment中
+    </div>
+    <div class="chatbox">
+      <div class="editor">
+
+        <textarea name="" id="txt2" placeholder="发一条友善的评论" maxlength="200"></textarea>
+        <div class="toolbar"><span class="conuter">0/200</span>
+          <button id="submit2">发布</button>
+        </div>
+
+        <ul id="list" class="list"></ul>
+      </div>
+
+
+    </div>
+
+
+    <div class="case-card">
+      <h3>案例5：tab栏切换案例day2-103</h3>
+      <div class="case-desc">
+        需求：鼠标经过不同的选项卡，底部显示不同的内容
+
+
+
+      </div>
+      <div class="show">
+
+      </div>
+    </div>
+</body>
+
+</html>

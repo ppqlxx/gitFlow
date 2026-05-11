@@ -1,0 +1,297 @@
+/* 引入谷歌字体 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.woff2?t=1675303337325') format('woff2'),
+    url('iconfont.woff?t=1675303337325') format('woff'),
+    url('iconfont.ttf?t=1675303337325') format('truetype');
+}
+
+/* CSS 自定义属性 */
+/* :root 等价于 <html>，把变量声明在全局作用域，整个页面都能用
+变量以 -- 开头，取值用 var(变量名, 默认值) */
+:root {
+  --bg: #f4f7fc;
+  --card: #ffffff;
+  --primary: #4299e1;
+  --primary-light: #e0e7ff;
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --border: #e5e7eb;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.1);
+  --transition: .25s ease;
+}
+
+body {
+  padding: 20px;
+  /* 给出宽度的时候才会显示居中 */
+  margin: 20px auto;
+  width: 1200px;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  height: 3000px;
+}
+
+.header-wrapper {
+  background-color: #fff;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+.header {
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  background-color: #fff;
+  border-bottom: 1px solid var(--border);
+}
+
+/* 增加一个显示类 与下面的电梯导航栏不同 这里是相当于有一个 */
+.header.fixed-header {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* 在小窗口时，占满 100% 视口宽度 */
+  max-width: 1200px;
+  /* 保持和你 body 宽度一致 */
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  /* 居中处理 */
+  z-index: 3;
+  box-shadow: var(--shadow);
+  animation: slideDown 0.3s ease-out forwards;
+  /* 加个简约的下拉动画 */
+  /* 解决模糊的辅助属性 */
+  backface-visibility: hidden;
+}
+
+/* 3. 重新定义动画：改用 top 值位移，不再动 transform */
+@keyframes slideDown {
+  from {
+    top: -100px;
+    /* 从屏幕上方外面开始 */
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    /* 回到顶部 0 的位置 */
+    opacity: 1;
+  }
+}
+
+.header .left {
+  flex: 1;
+  padding-left: 40px;
+}
+
+.header .right {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.right span {
+  flex: 1;
+  text-align: center;
+}
+
+.card {
+  height: 600px;
+  padding-top: 20px;
+  display: flex;
+  background-color: var(--card);
+  margin-bottom: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  /* align-items: stretch; */
+  /* 确保左右两个 flex 子项高度始终相等 */
+}
+
+.card .left {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card .left img {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.card .description {
+  color: var(--text);
+  font-size: 1.2rem;
+}
+
+.card .price {
+  color: brown;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.card .num {
+  color: var(--text-light);
+  font-size: 1.0rem;
+}
+
+.card .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* 让内容和页脚上下排列 */
+}
+
+.card .right img {
+  width: 100%;
+  /* 关键：占据第1列，且跨越两行 */
+  grid-row: 1 / 4;
+  grid-column: 1 / 2;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.card .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 14;
+}
+
+.smallcard {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  /* 增加一点间距更简约美观 */
+  align-items: top;
+  padding: 10px;
+}
+
+.smallcard .num {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+}
+
+.slider-footer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中（在 20% 高度内居中） */
+}
+
+.smallcard span {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+  background-color: rgba(0, 0, 0, .4);
+  color: #fff;
+  z-index: 2;
+  align-self: end;
+}
+
+ul {
+  display: flex;
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-footer li {
+  list-style: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .4);
+
+}
+
+.slider-footer li.active {
+  background-color: rgba(171, 0, 0, 0.4);
+}
+
+.header span.active {
+  color: brown;
+  border-bottom: 2px solid brown;
+}
+
+.navi {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  /* top: 50%;
+  transform: translateY(-50%); */
+  right: 0;
+  height: 55%;
+  width: 100px;
+  background-color: var(--card);
+  z-index: 2;
+  box-shadow: var(--shadow);
+  /* 初始状态：隐藏且透明度为0 */
+  /* display: none; */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s ease, visibility 0.3s ease, box-shadow var(--transition);
+}
+
+.navi:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* 增加一个显示类 */
+.navi.show {
+  visibility: visible;
+  /* display: block; */
+  opacity: 1;
+}
+
+.navi .description {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.navi ul {
+  flex-direction: column;
+  height: 100%;
+  line-height: 1.3;
+  margin: auto 0;
+}
+
+.navi ul li {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 50px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont.show {
+  color: red;
+  background-color: #4d2e2e;
+}

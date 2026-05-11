@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="day02.js"></script>
+  <link rel="stylesheet" href="day02.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="case-card">
+    <h3> 案例1：数字补0案例</h3>
+    <div class="case-desc">
+      需求：用户输入1个数，如果数字小于10，则前面进行补0，比如09 03等
+      做成计时器 或者页面时间显示
+      <div>
+        <span class="clock" id="hours"></span> :
+        <span class="clock" id="minutes"></span> :
+        <span class="clock" id="seconds"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-card">
+    <h3>案例2：简易ATM取款机案例</h3>
+    <div class="case-desc">
+      需求：用户可以选择存钱、取钱、查看余额和退出功能
+      <div class="bank">
+        <div id="money"><label for="operateMoney">当前余额：</label><span id="all"></span> <!-- 默认显示初始余额 -->
+          <label for="operateMoney">请输入金额：</label> <!-- 包裹文本 -->
+          <input type="text" id="operateMoney" placeholder="请输入操作金额">
+        </div>
+        <button onclick="putMoney()">存钱</button>
+        <button onclick="getMoney()">取钱</button>
+        <button onclick="look()">查看余额</button>
+        <button onclick="exit()">退出</button>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="case-card">
+    <h3>案例3：9*9乘法表</h3>
+    <div class="case-desc">
+      需求：打印9*9乘法表
+
+    </div>
+  </div>
+
+
+  <div class="case-card">
+    <h3>案例4：冒泡排序动画演示</h3>
+    <div class="case-desc">
+      需求：打印9*9乘法表
+
+    </div>
+  </div>
+</body>
+
+</html>

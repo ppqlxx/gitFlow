@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="day09.js"></script>
+  <link rel="stylesheet" href="day09.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="case-card">
+    <h3>案例1：毕业倒计时案例day4-118</h3>
+    <div class="case-desc">
+      需求：计算到下课还有多少时间
+      分析：
+      ①：用将来时间减去现在时间就是剩余的时间
+      ②：核心：使用将来的时间戳减去现在的时间戳
+      ③：把剩余的时间转换为天时分秒
+      注意：
+      1．通过时间戳得到是毫秒，需要转换为秒在计算
+      2．转换公式：
+      >d=parselnt(总秒数/60/60/24);//计算天数
+      >h=parselnt(总秒数/60/60%24)//计算小时
+      >m=parselnt(总秒数/60%60)://计算分数
+      >s=parselnt(总秒数%60); //计算当前秒数
+
+    </div>
+    <div class="show">
+      <div class="timetxt">
+        距离毕业还有：
+      </div>
+      <div class="time">
+        <div class="time-box"></div><span>天</span>
+        <div class="time-box"></div><span>时</span>
+        <div class="time-box"></div><span>分</span>
+        <div class="time-box"></div><span>秒</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="case-card">
+    <h3>案例2：关闭二维码案例day4-119</h3>
+    <div class="case-desc">
+      需求：优化程序，将关闭二维码案例改为利用parentNode的写法
+    </div>
+    <div class="show">
+      <div class="box">
+        <div class="x">x</div>
+        <div class="img">
+          <img src="../assets/APP二维码.png" alt="">
+        </div>
+      </div>
+      <div class="box">
+        <div class="x">x</div>
+        <div class="img">
+          <img src="../assets/APP二维码.png" alt="">
+        </div>
+      </div>
+      <div class="box">
+        <div class="x">x</div>
+        <div class="img">
+          <img src="../assets/APP二维码.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="case-card">
+    <h3>案例3：学成在线案例渲染day4-121</h3>
+    <div class="case-desc">
+      需求：按照数据染页面
+      分析
+      ①：准备好空的ul结构
+      ②：根据数据的个数，创建一个新的空li
+      ③：li里面添加内容img标题等
+      ④：追加给ul
+      重点练习：创建节点和追加节点
+
+    </div>
+    <div class="show">
+      <ul id="exp1"></ul>
+    </div>
+  </div>
+
+
+  <div class="case-card">
+    <h3>案例4：学生信息表案例day4-124</h3>
+    <div class="case-desc">
+      业务模块：
+      ①：点击录入按钮可以录入数据
+      ②：点击删除可以删除当前的数据
+    </div>
+    <div class="show">
+      <div class="insert">
+        <div class="head">新增学员</div>
+        <div class="insertData">
+          <form>
+            <div class="field">
+              <label for="name">姓名：</label>
+              <input type="text" name="name" id="name" maxlength="10" required />
+            </div>
+            <div class="field">
+              <label for="age">年龄：</label>
+              <input type="text" name="age" id="age" max=100 required />
+            </div>
+            <div class="field">
+              <label for="gender">性别：</label>
+              <select name="gender" id="gender">
+                <option value="men">男</option>
+                <option value="female">女</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="cost">薪资</label>
+              <input type="text" name="cost" id="cost" required />
+            </div>
+            <div class="field">
+              <label for="city">城市：</label>
+              <select name="city" id="city">
+                <option value="beijing">北京</option>
+                <option value="shanghai">上海</option>
+                <option value="shenzhen">深圳</option>
+              </select>
+            </div>
+            <button type="button">录入</button>
+          </form>
+        </div>
+      </div>
+      <div class="formRes">
+        <div class="head">就业榜</div>
+        <div class="data">
+          <table>
+            <thead>
+              <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>薪资</th>
+                <th>就业城市</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="case-card">
+    <h3>案例5：电梯导航案例day3-114</h3>
+    <div class="case-desc">
+      需求：点击不同的模块，页面可以自动跳转不同的位置
+      模块分析：
+      ①：页面滚动到对应位置，导航显示，否则隐藏模块
+      ②：点击导航对应小模块，页面会跳到对应大模块位置
+      ③：页面滚动到对应位置，电梯导航对应模块自动发生变化
+
+
+
+    </div>
+    <div class="show">
+
+    </div>
+  </div>
+
+</body>
+
+</html>
